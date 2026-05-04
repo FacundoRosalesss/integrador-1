@@ -35,12 +35,12 @@ server_tipo = int(input ("Indique tipo del servidor:\n1- Web\n2- Base de datos\n
 while server_tipo < 1 or server_tipo > 3:
     server_tipo = int(input ("Indique tipo del servidor:\n1- Web\n2- Base de datos\n3- Archivos\n"))
 
-server_name = str(input ("Ingrese nombre del servidor: "))
-admin_name = str(input ("Ingrese nombre del administrador responsable: "))
+server_name = input ("Ingrese nombre del servidor: ")
+admin_name = input ("Ingrese nombre del administrador responsable: ")
 
 print(f'\n--- Bienvenido {admin_name} reporte de evaluación de servidor: "{server_name}" ---\n')
 
-# VARIABLES CALCULADAS
+# REGLAS CALCULADAS
 
 if 40 <= uso_cpu <= 75 and espacio_disco >= 50:
     print(f"El uso de CPU se encuentra en el rango operativo esperado. Uso actual: {uso_cpu}%. Espacio libre: {espacio_disco}GB.")
@@ -62,8 +62,8 @@ if cant_user / cant_proce > 20:
 else:
     error2 = False
 
-if server_tipo == 3 and cant_user > 15 and espacio_disco < 50:
-    print(f"‼️ Servidor de archivos con alta demanda y poco espacio. Usuarios: {cant_user}, Espacio libre: {espacio_disco}GB.")
+if server_tipo == 3 and (cant_user > 15 or espacio_disco < 50):
+    print(f"‼️ Servidor de archivos con alta demanda o poco espacio. Usuarios: {cant_user}, Espacio libre: {espacio_disco}GB.")
     error3 = True
 else:
     error3 = False
