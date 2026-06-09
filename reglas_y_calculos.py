@@ -1,0 +1,46 @@
+def reglas_y_calculos(uso_cpu, uso_ram, porcentaje_carga, espacio_disco, cant_user, cant_proce, so, firewall, server_tipo, server_name, admin_name):
+    if 40 <= uso_cpu <= 75 and espacio_disco >= 50:
+        print(f"El uso de CPU se encuentra en el rango operativo esperado. Uso actual: {uso_cpu}%. Espacio libre: {espacio_disco}GB.")
+
+    if 40 <= uso_ram <= 75 and espacio_disco >= 50:
+        print(f"El uso de RAM se encuentra en el rango operativo esperado. Uso actual: {uso_ram}%. Espacio libre: {espacio_disco}GB.")
+
+    print(f"El porcentaje de carga del servidor es: {porcentaje_carga}%.\n")
+
+    if uso_cpu >= 90 or uso_ram >= 90 and cant_proce >= 100:
+        print(f"‼️ [Error 140] Sobrecarga crítica de hardware detectada. Usuarios: {cant_user}, Procesos: {cant_proce}, CPU: {uso_cpu}%, RAM: {uso_ram}%.")
+        error1 = True
+    else:
+        error1 = False
+
+    if cant_user / cant_proce > 20:
+        print(f"‼️ [Error 340] Cantidad de usuarios por proceso inusualmente alta. Usuarios: {cant_user}, Procesos: {cant_proce}.")
+        error2 = True   
+    else:
+        error2 = False
+
+    if server_tipo == 3 and (cant_user > 15 or espacio_disco < 50):
+        print(f"‼️ [Error 233] Servidor de archivos con alta demanda o poco espacio. Usuarios: {cant_user}, Espacio libre: {espacio_disco}GB.")
+        error3 = True
+    else:
+        error3 = False
+
+    if cant_user > 50 and server_tipo == 1:
+        print(f"‼️ [Error 301] El servidor Web está llegando al límite de usuarios. cant_user: {cant_user}.")
+        error4 = True
+    else:
+        error4 = False
+
+    if not firewall == 1 and cant_user > 0:
+        print(f"‼️ [Error 530] El servidor está expuesto con usuarios activos y sin firewall.")
+        error5 = True
+    else:
+        error5 = False
+
+    if espacio_disco == 0 and cant_proce >= 1:
+        print(f"‼️ [Error 240] Recursos agotados, el servidor no puede operar.")
+        error6 = True
+    else:
+        error6 = False
+
+    return error1, error2, error3, error4, error5, error6
