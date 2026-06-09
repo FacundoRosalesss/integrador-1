@@ -65,7 +65,7 @@ def menu():
 
 ```
 
-- ###Integrantes del proyecto
+- ### Integrantes del proyecto
 
 1. ##### Brian mendieta
 1. ##### Facundo rosales
