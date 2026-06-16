@@ -1,16 +1,16 @@
-def recomendaciones(error1, error2, error3, error4, error5, error6):
+def recomendaciones(error1: int, error2: int, error3: int, error4: int, error5: int, error6: int) -> None:
     """
     función para mostrar recomendaciones basadas en los errores detectados
 
-    parametros:
-    - error1: bool
-    - error2: bool
-    - error3: bool
-    - error4: bool
-    - error5: bool
-    - error6: bool
+    Args:
+    - error1: (bool)
+    - error2: (bool)
+    - error3: (bool)
+    - error4: (bool)
+    - error5: (bool)
+    - error6: (bool)
 
-    retorna:
+    Returns:
     - None
     """
     print("\n--- Recomendaciones ---\n")

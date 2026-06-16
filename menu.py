@@ -1,21 +1,21 @@
 from inputs import pedir_float, pedir_int, pedir_string
 
-def menu():
+def menu() -> tuple[float, float, float, float, int, int, int, int, int, str, str]:
     """
     Muestra el menú de opciones para ingresar los datos del servidor.
 
-    retorna:
-    - uso_cpu: float
-    - uso_ram: float
-    - porcentaje_carga: float
-    - espacio_disco: float
-    - cant_user: int
-    - cant_proce: int
-    - so: int
-    - firewall: int
-    - server_tipo: int
-    - server_name: str
-    - admin_name: str
+    Returns:
+    - uso_cpu: (float)
+    - uso_ram: (float)
+    - porcentaje_carga: (float)
+    - espacio_disco: (float)
+    - cant_user: (int)
+    - cant_proce: (int)
+    - so: (int)
+    - firewall: (int)
+    - server_tipo: (int)
+    - server_name: (str)
+    - admin_name: (str)
     """
     print(f'\n--- SISTEMA DE DIAGNOSTICO Y CONFIGURACION DE SERVIDOR BASADO EN REGLAS  ---\n')
 

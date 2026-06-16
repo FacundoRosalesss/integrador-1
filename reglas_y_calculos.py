@@ -1,4 +1,29 @@
-def reglas_y_calculos(uso_cpu, uso_ram, porcentaje_carga, espacio_disco, cant_user, cant_proce, so, firewall, server_tipo, server_name, admin_name):
+def reglas_y_calculos(uso_cpu: float, uso_ram: float, porcentaje_carga: float, espacio_disco: float, cant_user: int, cant_proce: int, so: str, firewall: int, server_tipo: int, server_name: str, admin_name: str) -> tuple[bool, bool, bool, bool, bool, bool]:
+    """
+    función para evaluar las reglas y cálculos del diagnóstico del servidor
+
+    Args:
+    - uso_cpu: (float)
+    - uso_ram: (float)
+    - porcentaje_carga: (float)
+    - espacio_disco: (float)
+    - cant_user: (int)
+    - cant_proce: (int)
+    - so: (str)
+    - firewall: (int)
+    - server_tipo: (int)
+    - server_name: (str)
+    - admin_name: (str)
+
+    Returns:
+    - error1: (bool)
+    - error2: (bool)
+    - error3: (bool)
+    - error4: (bool)
+    - error5: (bool)
+    - error6: (bool)
+    """
+    
     if 40 <= uso_cpu <= 75 and espacio_disco >= 50:
         print(f"El uso de CPU se encuentra en el rango operativo esperado. Uso actual: {uso_cpu}%. Espacio libre: {espacio_disco}GB.")
 

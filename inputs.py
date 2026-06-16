@@ -1,14 +1,14 @@
-def pedir_float(mensaje, min_val=0, max_val=999999999999):
+def pedir_float(mensaje: str, min_val: float = 0, max_val: float = 999999999999) -> float:
     """
     input para pedir un numero flotante con validacion de rango
 
-    parametros:
-    - mensaje: str
-    - min_val: float
-    - max_val: float
+    Args:
+    - mensaje: (str)
+    - min_val: (float)
+    - max_val: (float)
 
-    retorna:
-    - valor_float: float
+    Returns:
+    - valor_float: (float)
     """
     i = 0
     while i < 1:
@@ -23,17 +23,17 @@ def pedir_float(mensaje, min_val=0, max_val=999999999999):
             print("Entrada no válida. Por favor, ingrese un número.")
 
 
-def pedir_int(mensaje, min_val=0, max_val=999999999999):
+def pedir_int(mensaje: str, min_val: int = 0, max_val: int = 999999999999) -> int:
     """
     input para pedir un numero entero con validacion de rango
 
-    parametros:
-    - mensaje: str
-    - min_val: int
-    - max_val: int
+    Args:
+    - mensaje: (str)
+    - min_val: (int)
+    - max_val: (int)
 
-    retorna:
-    - valor_int: int
+    Returns:
+    - valor_int: (int)
     """
     i = 0
     while i < 1:
@@ -47,15 +47,15 @@ def pedir_int(mensaje, min_val=0, max_val=999999999999):
         except ValueError:
             print("Entrada no válida. Por favor, ingrese un número entero.")
 
-def pedir_string(mensaje):
+def pedir_string(mensaje: str) -> str:
     """
     input para pedir una cadena de texto con validación de longitud y formato
 
-    parametros:
-    - mensaje: str
+    Args:
+    - mensaje: (str)
 
-    retorna:
-    - valor_string: str
+    Returns:
+    - valor_string: (str)
     """
     i = 0
     while i < 1:
