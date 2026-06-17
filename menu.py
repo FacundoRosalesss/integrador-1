@@ -17,7 +17,7 @@ def menu() -> tuple[float, float, float, float, int, int, int, int, int, str, st
     - server_name: (str)
     - admin_name: (str)
     """
-    print(f'\n--- SISTEMA DE DIAGNOSTICO Y CONFIGURACION DE SERVIDOR BASADO EN REGLAS  ---\n')
+    print('\n--- SISTEMA DE DIAGNOSTICO Y CONFIGURACION DE SERVIDOR BASADO EN REGLAS  ---\n')
 
     uso_cpu = pedir_float("Inserte uso de CPU (%): ", min_val=0, max_val=100)
 

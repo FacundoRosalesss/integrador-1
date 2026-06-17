@@ -1,4 +1,15 @@
-def reglas_y_calculos(uso_cpu: float, uso_ram: float, porcentaje_carga: float, espacio_disco: float, cant_user: int, cant_proce: int, so: str, firewall: int, server_tipo: int, server_name: str, admin_name: str) -> tuple[bool, bool, bool, bool, bool, bool]:
+def reglas_y_calculos(
+    uso_cpu: float, 
+    uso_ram: float, 
+    porcentaje_carga: float, 
+    espacio_disco: float, 
+    cant_user: int, 
+    cant_proce: int, 
+    so: str, firewall: 
+    int, server_tipo: int, 
+    server_name: str, 
+    admin_name: str
+    ) -> tuple[bool, bool, bool, bool, bool, bool]:
     """
     función para evaluar las reglas y cálculos del diagnóstico del servidor
 
@@ -56,14 +67,14 @@ def reglas_y_calculos(uso_cpu: float, uso_ram: float, porcentaje_carga: float, e
     else:
         error4 = False
 
-    if not firewall == 1 and cant_user > 0:
-        print(f"‼️ [Error 530] El servidor está expuesto con usuarios activos y sin firewall.")
+    if firewall != 1 and cant_user > 0:
+        print("‼️ [Error 530] El servidor está expuesto con usuarios activos y sin firewall.")
         error5 = True
     else:
         error5 = False
 
     if espacio_disco == 0 and cant_proce >= 1:
-        print(f"‼️ [Error 240] Recursos agotados, el servidor no puede operar.")
+        print("‼️ [Error 240] Recursos agotados, el servidor no puede operar.")
         error6 = True
     else:
         error6 = False
