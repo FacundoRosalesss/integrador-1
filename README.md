@@ -11,8 +11,38 @@
 >  ##### - validaciones de datos de entradas
 >  ##### - Organización lógica del sistema en múltiples archivos 
 >  ##### - Separación en funciones 
->  ##### -  Mejora en mantenibilidad y legibilidad 
+>  ##### -  Mejora en mantenibilidad y legibilidad
+>
+> ##  <u>Errores</u>
 > 
+> ### <u></u>Error: xyz
+> 
+> ### X: parámetro principal 
+> 
+> ### Y: segundo parámetro (puede no haber)
+> 
+> ### Z: error relacionado a un tipo de servidor en específico 
+> 
+> ### 1:Falla en la cpu/ram
+> 
+> ### 2: Falla en el disco 
+> 
+> ### 3: Falla en los usuarios 
+> 
+> ### 4: Falla en los procesos
+> 
+> ### 5: Falla en el firewall 
+> 
+> ## Tipos de servidores:
+> 
+> ### 0: no relacionado, podría ser cualquiera, no importa 
+> 
+> ### 1: web 
+> 
+> ### 2: base de datos
+> 
+> ### 3: archivos
+> > 
 > ## <u> Idioma utilizado</u>
 > ### - Python
 > #### para mas informacion del creador y origen del idioma  apretar el siguiente link
