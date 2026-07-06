@@ -49,9 +49,10 @@ def reglas_y_calculos(
     else:
         error1 = False
 
-    if cant_user / cant_proce > 20:
-        print(f"‼️ [Error 340] Cantidad de usuarios por proceso inusualmente alta. Usuarios: {cant_user}, Procesos: {cant_proce}.")
-        error2 = True   
+    if cant_proce == 0:        
+        if cant_user / cant_proce > 20:
+            print(f"‼️ [Error 340] Cantidad de usuarios por proceso inusualmente alta. Usuarios: {cant_user}, Procesos: {cant_proce}.")
+            error2 = True
     else:
         error2 = False
 

@@ -1,3 +1,6 @@
+from validaciones import es_float
+from validaciones import es_int
+
 def pedir_float(
     mensaje: str, 
     min_val: float = 0, 
@@ -16,15 +19,13 @@ def pedir_float(
     """
 
     while True:
-        try:
-            valor_float = float(input(mensaje))
-            if min_val <= valor_float <= max_val:
-                return valor_float
-            else:
-                print(f"Por favor, ingrese un número entre {min_val} y {max_val}.")
-        except ValueError:
-            print("Entrada no válida. Por favor, ingrese un número.")
-            
+        valor_float = input(mensaje)
+        if es_float(valor_float):
+            if min_val <= float(valor_float) <= max_val:
+                return float(valor_float) # <--- Unica salida
+        else:
+            print(f"Por favor, ingrese un número entre {min_val} y {max_val}.")
+        
 
 
 def pedir_int(
@@ -45,14 +46,11 @@ def pedir_int(
     """
     
     while True:
-        try:
-            valor_int = int(input(mensaje))
-            if min_val <= valor_int <= max_val:
-                return valor_int
+            valor_int = input(mensaje)
+            if es_int(valor_int) and min_val <= int(valor_int) <= max_val:
+                return int(valor_int) # <--- Unica salida
             else:
                 print(f"Por favor, ingrese un número entero entre {min_val} y {max_val}.")
-        except ValueError:
-            print("Entrada no válida. Por favor, ingrese un número entero.")
             
 
 def pedir_string(
@@ -71,6 +69,6 @@ def pedir_string(
     while True:
         valor_string = input(mensaje)
         if len(valor_string) >= 5 and valor_string[0] != ' ':
-            return  valor_string
+            return valor_string # <--- Unica salida
         else:
             print("Entrada no válida. Ingrese una cadena de al menos 5 caracteres que no comience con un espacio.")
