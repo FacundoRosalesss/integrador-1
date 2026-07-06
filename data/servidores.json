@@ -1,0 +1,24 @@
+{
+    "servidor1": {
+        "administrador": "lucas",
+        "cpu": 10.0,
+        "ram": 10.0,
+        "disco": 10.0,
+        "procesos": 10,
+        "so": 1,
+        "usuarios": 10,
+        "firewall": 1,
+        "tipo": 1
+    },
+    "añañemby": {
+        "administrador": "pepito",
+        "cpu": 100.0,
+        "ram": 100.0,
+        "procesos": 10000,
+        "disco": 0.0,
+        "so": 2,
+        "usuarios": 100000,
+        "firewall": 2,
+        "tipo": 1
+    }
+}

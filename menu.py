@@ -1,45 +1,38 @@
-from inputs import pedir_float, pedir_int, pedir_string
+from inputs import pedir_int
+from archivos import cargar_servidores
+from funcionalidades import (
+    cargar_configuracion, 
+    mostrar_configuracion, 
+    ejecutar_diagnostico, 
+    guardar_configuracion, 
+    modificar_configuracion
+)
 
-def menu() -> tuple[float, float, float, float, int, int, int, int, int, str, str]:
-    """
-    Muestra el menú de opciones para ingresar los datos del servidor.
+servidores_en_memoria = cargar_servidores()
 
-    Returns:
-    - uso_cpu: (float)
-    - uso_ram: (float)
-    - porcentaje_carga: (float)
-    - espacio_disco: (float)
-    - cant_user: (int)
-    - cant_proce: (int)
-    - so: (int)
-    - firewall: (int)
-    - server_tipo: (int)
-    - server_name: (str)
-    - admin_name: (str)
-    """
+def menu() -> int:
     print('\n--- SISTEMA DE DIAGNOSTICO Y CONFIGURACION DE SERVIDOR BASADO EN REGLAS  ---\n')
-
-    uso_cpu = pedir_float("Inserte uso de CPU (%): ", min_val=0, max_val=100)
-
-    uso_ram = pedir_float("Inserte uso de memoria RAM (%): ", min_val=0, max_val=100)
-
-    porcentaje_carga = (uso_cpu + uso_ram) / 2
-
-    espacio_disco = pedir_float("Inserte espacio libre en disco (GB): ", min_val=0)
-
-    cant_user = pedir_int("Inserte la cantidad de usuarios conectados: ", min_val=0)
-
-    cant_proce = pedir_int("Inserte la cantidad de procesos activos: ", min_val=0)
-
-    so = pedir_int("Indique EL tipo de sistema operativo:\n1- Linux\n2- Windows\n3- macOS\n", min_val=1, max_val=3)
-
-    firewall = pedir_int("Indique el numero del estado del firewall:\n1- Activo\n2- Inactivo\n", min_val=1, max_val=2)
-
-    server_tipo = pedir_int("Indique tipo del servidor:\n1- Web\n2- Base de datos\n3- Archivos\n", min_val=1, max_val=3)
-
-    server_name = pedir_string("Ingrese nombre del servidor: ")
-    admin_name = pedir_string("Ingrese nombre del administrador responsable: ")
-
-    print(f'\n--- Bienvenido {admin_name} reporte de evaluación de servidor: "{server_name}" ---\n')
+    print("1- Cargar configuración")
+    print("2- Mostrar configuración")
+    print("3- Modificar configuración")
+    print("4- Ejecutar diagnóstico")
+    print("5- Guardar configuración")
+    print("6- Salir del programa")
     
-    return uso_cpu, uso_ram, porcentaje_carga, espacio_disco, cant_user, cant_proce, so, firewall, server_tipo, server_name, admin_name
+    opcion = pedir_int("Ingrese una opción: ", min_val=1, max_val=6)
+    
+    match opcion:
+        case 1:
+            cargar_configuracion(servidores_en_memoria)
+        case 2:
+            mostrar_configuracion(servidores_en_memoria)
+        case 3:
+            modificar_configuracion(servidores_en_memoria)
+        case 4:
+            ejecutar_diagnostico(servidores_en_memoria)
+        case 5:
+            guardar_configuracion(servidores_en_memoria)
+        case 6:
+            print("Saliendo del programa...")
+            
+    return opcion
